@@ -56,3 +56,26 @@ var elvs = {
     special: 'huge ears and immortal'
 };
 army(elvs);
+// ANCHOR objects
+var anything = {
+    key1: 'Burn',
+    key2: 'them',
+    key3: function () {
+        return this.key1 + " " + this.key2 + " all";
+    },
+    key4: ["yo", "paizan"]
+};
+console.log(anything.key3());
+var person = {
+    firstName: "Tom",
+    lastName: "Hanks",
+    sayHello: function () { } // NOTE Type template
+};
+// person.sayHello = () => console.log(`Hello ${person.firstName} ${person.lastName}`); // for different approach
+person.sayHello = function () { return "Hello " + person.firstName + " " + person.lastName; };
+// person.sayHello();
+var getInFight = function (obj) {
+    // console.log(`Hey ${obj.firstName} ${obj.lastName}, you got your ass caped in Saving Private Ryan!`)
+    console.log("Hey " + obj.firstName + " " + obj.lastName + ", over here...... (Runs to him)\n" + obj.sayHello() + " you got your ass caped in Saving Private Ryan!");
+};
+getInFight(person);
