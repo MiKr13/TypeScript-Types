@@ -3,10 +3,10 @@
 // ANCHOR boolean
 let isTrue : boolean = false;
 
-console.log(isTrue);
+console.log(`Eminem is God?\nAns ${isTrue}`);
 
 // ANCHOR number
-const sum = (a : number, b : number) => {
+const sum = (a : number, b : number) : number => {
     return a + b;
 }
 
@@ -47,3 +47,35 @@ console.log(balasphamy);
 balasphamy = true;
 console.log(`Ans: ${balasphamy ? 'Yes Noble Hierarch' : 'No it was shit filled dumpster'}`);
 
+// ANCHOR void
+const johnSnow = () : void => {
+    console.log("You know nothing John Snow and btw stop with that 'She is my queen' crap");
+}
+
+johnSnow();
+
+// ANCHOR never (for functions with no reachable end points i.e. never returns or for a varible that under some type guard never becomes true)
+const error = () : never => {
+    throw Error('All you had to do was follow the damn train CJ');
+}
+
+// error();
+
+// ANCHOR interface
+interface RobotArmy {
+    count: number;
+    type: string;
+    special: string;
+}
+
+let army = (props: RobotArmy) : void => {
+    console.log(props);
+}
+
+let elvs : RobotArmy = {
+    count: 100,
+    type: 'elv',
+    special: 'huge ears and immortal'
+}
+
+army(elvs);

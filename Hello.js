@@ -1,7 +1,7 @@
 // NOTE Run coresponding JS file by nodemon Hello.js, use Comment Anchor in VS code, also, watch this file with tsc -w Hello.ts
 // ANCHOR boolean
 var isTrue = false;
-console.log(isTrue);
+console.log("Eminem is God?\nAns " + isTrue);
 // ANCHOR number
 var sum = function (a, b) {
     return a + b;
@@ -38,3 +38,21 @@ var balasphamy = "When you first saw Halo, were you blinded by it's majesty?";
 console.log(balasphamy);
 balasphamy = true;
 console.log("Ans: " + (balasphamy ? 'Yes Noble Hierarch' : 'No it was shit filled dumpster'));
+// ANCHOR void
+var johnSnow = function () {
+    console.log("You know nothing John Snow and btw stop with that 'She is my queen' crap");
+};
+johnSnow();
+// ANCHOR never (for functions with no reachable end points i.e. never returns or for a varible that under some type guard never becomes true)
+var error = function () {
+    throw Error('All you had to do was follow the damn train CJ');
+};
+var army = function (props) {
+    console.log(props);
+};
+var elvs = {
+    count: 100,
+    type: 'elv',
+    special: 'huge ears and immortal'
+};
+army(elvs);
