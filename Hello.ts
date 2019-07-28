@@ -1,4 +1,4 @@
-// NOTE Run coresponding JS file by nodemon Hello.js, use Comment Anchor in VS code, also, watch this file with tsc -w Hello.ts
+// NOTE Watch this file with tsc -w Hello.ts, Run coresponding generated JS file by nodemon Hello.js, use Comment Anchor Extension in VS code
 
 // ANCHOR boolean
 let isTrue: boolean = false;
@@ -65,7 +65,7 @@ const error = (): never => {
 interface RobotArmy {
     count: number;
     type: string;
-    special: string;
+    special?: string; // Optional
 }
 
 let army = (props: RobotArmy): void => {
@@ -109,3 +109,34 @@ const getInFight = (obj: { firstName: string, lastName: string, sayHello: () => 
 }
 
 getInFight(person);
+
+// ANCHOR Type Assertion
+let robo = {} as RobotArmy // this is dangerous, it's like saying "hey I know what I am doing, shut up, shut up, shut uuuuugggpppp!" (Like Chandler on 'pivot')
+console.log(robo.count);
+`https://basarat.gitbooks.io/typescript/docs/types/type-assertion.html`;
+
+// ANCHOR Class
+class Assasin {
+    private name: string = '';
+    private stealth: string = '';
+
+    constructor(name: string, stealth: string) {
+        this.name = name;
+        this.stealth = stealth;
+    }
+
+    assasinate(person: string): string {
+        return `${this.name} assasinated ${person} using ${this.stealth}, Requiescat in pace`;
+    }
+}
+
+let ezio = new Assasin('Ezio', 'hidden blade');
+console.log(ezio.assasinate('Cesare Borgia'));
+
+// ANCHOR Union
+let confused: string | number | boolean = true; // can assign any of these 3 to this variable
+console.log(confused);
+confused = 'I need to lie down';
+console.log(confused);
+confused = 4
+console.log(confused);

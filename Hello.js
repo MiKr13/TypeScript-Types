@@ -1,4 +1,4 @@
-// NOTE Run coresponding JS file by nodemon Hello.js, use Comment Anchor in VS code, also, watch this file with tsc -w Hello.ts
+// NOTE Watch this file with tsc -w Hello.ts, Run coresponding generated JS file by nodemon Hello.js, use Comment Anchor Extension in VS code
 // ANCHOR boolean
 var isTrue = false;
 console.log("Eminem is God?\nAns " + isTrue);
@@ -79,3 +79,29 @@ var getInFight = function (obj) {
     console.log("Hey " + obj.firstName + " " + obj.lastName + ", over here...... (Runs to him)\n" + obj.sayHello() + " you got your ass caped in Saving Private Ryan!");
 };
 getInFight(person);
+// ANCHOR Type Assertion
+var robo = {}; // this is dangerous, it's like saying "hey I know what I am doing, shut up, shut up, shut uuuuugggpppp!" (Like Chandler on 'pivot')
+console.log(robo.count);
+"https://basarat.gitbooks.io/typescript/docs/types/type-assertion.html";
+// ANCHOR Class
+var Assasin = /** @class */ (function () {
+    function Assasin(name, stealth) {
+        this.name = '';
+        this.stealth = '';
+        this.name = name;
+        this.stealth = stealth;
+    }
+    Assasin.prototype.assasinate = function (person) {
+        return this.name + " assasinated " + person + " using " + this.stealth + ", Requiescat in pace";
+    };
+    return Assasin;
+}());
+var ezio = new Assasin('Ezio', 'hidden blade');
+console.log(ezio.assasinate('Cesare Borgia'));
+// ANCHOR Union
+var confused = true; // can assign any of these 3 to this variable
+console.log(confused);
+confused = 'I need to lie down';
+console.log(confused);
+confused = 4;
+console.log(confused);
